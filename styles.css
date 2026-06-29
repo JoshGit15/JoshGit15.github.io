@@ -23,3 +23,7 @@
     #image{
         padding-top: 10px;
     }
+
+    #description{
+        max-width: 80vw;
+    }
