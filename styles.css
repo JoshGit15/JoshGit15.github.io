@@ -1,0 +1,25 @@
+    body {
+        background-color: rgb(116, 113, 19);
+    }
+
+    .header1 {
+        text-align: center;
+        font-family: 'Google Sans';
+        text-decoration: underline;
+        font-size: 60px;
+        margin-top: 20px;
+    }
+
+    .header2 {
+        text-decoration: underline;
+    }
+
+    .border {
+        height: 2px;
+        background-color: black;
+        border-color: black;
+    }
+
+    #image{
+        padding-top: 10px;
+    }
