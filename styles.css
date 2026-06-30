@@ -353,3 +353,26 @@ footer {
 .dark-mode footer {
     background-color: #111;
 }
+
+/* MOBILE STYLES */
+@media (max-width: 800px) {
+
+    .header1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    #summary .header2,
+    #personalQualities .header2,
+    #currentEducation .header2,
+    #personalAchivements .header2 {
+        font-size: 40px;
+    }
+
+    #summary,
+    #personalQualities,
+    #currentEducation,
+    #personalAchivements {
+        padding: 60px 20px;
+    }
+}
