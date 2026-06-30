@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 
+    <script>
+        function validateForm() {
+            let name = document.forms["contactForm"]["fname"].value;
+            if (name == "") {
+                document.getElementById("message").innerHTML = "Name is wrong"
+            }
+            
+        }
+</script>
 </head>
 <body>
     <div id="navigationBar">
@@ -21,26 +30,47 @@
             <li><a href="index.html#currentEducation">Current Education</a></li>
             <li><a href="index.html#personalAchivements">Personal Achivements</a></li>
             <li><a href="contact.html">Contact Me</a></li>
+            <li> <button id="themeBtn">darkMode</button> </li>
         </ul>
        </div>
     </div>
     <div class="container">
-    <form action="action_page.php">
+    <form name="contactForm">
 
         <label for="fname">First and last name</label>
-        <input type="text" id="name" name="name" placeholder="Your name..">
+        <input type="text" id="name" name="fname" placeholder="Your name..">
 
         <label for="contactNumber">Contact Number </label>
         <input type="text" id="number" name="number" placeholder="Your phone number..">
 
         <label for="subject">Subject</label>
         <textarea id="subject" name="subeject" placeholder="Tell me about yourself.." style="height:200px"></textarea>
-
-        <input type="submit" value="Submit">
-
+        <p id="message"></p>
+        <button type="button" onclick="validateForm()">Submit</button>
     </form>
-    </div>
-    
-    </div>
+
+    <script>
+const themeBtn = document.getElementById("themeBtn");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeBtn.textContent = "Light Mode";
+}
+
+// Toggle theme
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "Dark Mode";
+    }
+});
+</script>
+
 </body>
 </html>

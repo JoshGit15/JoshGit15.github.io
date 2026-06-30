@@ -2,36 +2,14 @@
 <html>
 <head>
     <title>Josh Resume</title>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <link rel="icon" type="image/x-icon" href="/Favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-
 </head>
 <body>
-
-    <script>
-
-let mybutton = document.getElementById("myBtn");
-
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0; 
-}
-    </script>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"> Top </button>
     <div id="navigationBar">
         <div>
              <h1 class="header1"><a href="index.html">Joshua Halpin CV</a></h1>
@@ -43,6 +21,7 @@ function topFunction() {
             <li><a href="#currentEducation">Current Education</a></li>
             <li><a href="#personalAchivements">Personal Achivements</a></li>
             <li><a href="contact.html">Contact Me</a></li>
+            <li> <button id="themeBtn">darkMode</button> </li>
         </ul>
        </div>
     </div>
@@ -81,7 +60,7 @@ function topFunction() {
                 <li>
                     NSW Sate Boocia
                     <div>
-                        <img id="image" src="https://www.illawarramercury.com.au/images/transform/v1/crop/frm/gzajA9j5yvatvSgWamdNVy/4f8578fb-205f-4756-a422-efad94ff7703.jpg/r576_0_5184_2592_w1200_h678_fmax.jpg" alt"BulliHighschoolWinningStateBoccia" style="width: 240px;;height: 140px;;"/>
+                        <img id="image" src="https://www.illawarramercury.com.au/images/transform/v1/crop/frm/gzajA9j5yvatvSgWamdNVy/4f8578fb-205f-4756-a422-efad94ff7703.jpg/r576_0_5184_2592_w1200_h678_fmax.jpg" alt="BulliHighschoolWinningStateBoccia" style="width: 240px;;height: 140px;;"/>
                     </div>
                     <div>
                         <p id = "description">During my time on the school Boccia team me and my team have worked together for over 3 years learning how to communicate effectively and implementing stratergies to win our games. Using that communication and stratergies we have been able to qualify to state twice and win it once.</p>
@@ -92,10 +71,55 @@ function topFunction() {
     </div>
 
     <div>
-        <footer>
-  <p>Joshua Halpin</p>
-  <p>Joshua.jdmh@gmail.com</p>
-</footer>
+    <footer>
+        <p>Joshua Halpin</p>
+        <p>Joshua.jdmh@gmail.com</p>
+    </footer>
     </div>
+    
+    <script>
+const themeBtn = document.getElementById("themeBtn");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeBtn.textContent = "Light Mode";
+}
+
+// Toggle theme
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        themeBtn.textContent = "Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        themeBtn.textContent = "Dark Mode";
+    }
+});
+</script>
+
+<script>
+const myBtn = document.getElementById("myBtn");
+
+// Show button when user scrolls down
+window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        myBtn.style.display = "block";
+    } else {
+        myBtn.style.display = "none";
+    }
+};
+
+// Scroll to top
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
 </body>
 </html>
