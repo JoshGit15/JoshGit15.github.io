@@ -53,22 +53,41 @@
         </div>
 
         
-        <div id = "personalAchivements">
-            <h2 class="header2">Personal Achivements</h2>
-            <p> As a Bulli high student I have participated in numerous extra curricular activities. Such as: </p>
-            <ul> 
-                <li>
-                    NSW Sate Boocia
-                    <div>
-                        <img id="image" src="https://www.illawarramercury.com.au/images/transform/v1/crop/frm/gzajA9j5yvatvSgWamdNVy/4f8578fb-205f-4756-a422-efad94ff7703.jpg/r576_0_5184_2592_w1200_h678_fmax.jpg" alt="BulliHighschoolWinningStateBoccia" style="width: 240px;;height: 140px;;"/>
-                    </div>
-                    <div>
-                        <p id = "description">During my time on the school Boccia team me and my team have worked together for over 3 years learning how to communicate effectively and implementing stratergies to win our games. Using that communication and stratergies we have been able to qualify to state twice and win it once.</p>
-                    </div>
-                </li>
-            </ul>
+<div id="personalAchivements">
+    <h2 class="header2">Personal Achievements</h2>
+
+    <div class="achievement">
+
+        <button class="accordion">NSW State Boccia
+            <span class="arrow">▸</span>
+        </button>
+
+        <div class="panel">
+            <img src="https://www.illawarramercury.com.au/images/transform/v1/crop/frm/gzajA9j5yvatvSgWamdNVy/4f8578fb-205f-4756-a422-efad94ff7703.jpg/r576_0_5184_2592_w1200_h678_fmax.jpg"
+                 alt="Bulli High School Boccia Team"
+                 class="achievement-img"/>
+
+            <p>
+                During my time on the school Boccia team we worked together for over 3 years, learning communication and strategy. We qualified for state twice and won once. In year 12 since it was my final year I took on a coaching/mentoring role to teach two year 7 boys to take over the team and hopefully play all the way through till they are in year 12.
+            </p>
         </div>
     </div>
+
+<div class="achievement">
+
+    <button class="accordion">
+        Student Representative Council 
+    <span class="arrow">▸</span>
+    </button>
+
+    <div class="panel">
+        <p>
+            I was part of the Student Representative Council for 3 years volunteering multiple times per year to organize numerous activities for the school and fundraisers.
+        </p>
+    </div>
+
+</div>
+</div>
 
     <div>
     <footer>
@@ -103,7 +122,6 @@ themeBtn.addEventListener("click", function () {
 <script>
 const myBtn = document.getElementById("myBtn");
 
-// Show button when user scrolls down
 window.onscroll = function () {
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         myBtn.style.display = "block";
@@ -120,6 +138,22 @@ function topFunction() {
     });
 }
 </script>
+
+<script>
+    document.querySelectorAll(".accordion").forEach(btn => {
+        btn.addEventListener("click", function () {
+
+            const panel = this.nextElementSibling;
+
+            console.log("Panel before:", panel.classList);
+
+            panel.classList.toggle("open");
+
+            console.log("Panel after:", panel.classList);
+        });
+    });
+</script>
+
 
 </body>
 </html>
