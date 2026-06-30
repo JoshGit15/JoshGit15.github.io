@@ -3,19 +3,23 @@
 }
 body {
     background-color: rgb(230, 226, 226);
+    font-family: 'Google Sans';
 }
 
+a {
+    color: black;
+}
 .header1 {
     text-align: center;
-    font-family: 'Google Sans';
     text-decoration: underline;
     font-size: 60px;
     margin-top: 20px;
-    width:fit-content;
+    font-weight: 700;
 }
 
 .header2 {
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .border {
@@ -24,8 +28,19 @@ body {
     border-color: black;
 }
 
+#content{
+    padding: 0px 50px;
+}
+
 #image{
-    padding-top: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#image:hover {
+    padding: 1px;
+    border: solid 1px black;
+    margin-top: 10px;
 }
 
 #description{
@@ -40,6 +55,22 @@ body {
     justify-content: flex-start;
 }
 
+@media (max-width: 800px) {
+  #navigationBar {
+    flex-direction: column;
+  }
+}
+
+
+#qualities li::before{
+    content: url(/check.svg);
+    padding-right: 3px;
+}
+
+#qualities li{
+    list-style-type: none;
+    padding: 3px 0px;
+}
 
 #navigationBar div:first-child{
     min-width: 300px;
