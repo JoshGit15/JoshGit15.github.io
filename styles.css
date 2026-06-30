@@ -42,6 +42,36 @@ a {
     font-size: 90px;
 }
 
+#personalQualities{
+    padding: 100px 30px;
+    background-color: rgb(60, 60, 60);
+    color: white
+}
+
+#personalQualities .header2{
+    font-size: 90px;
+}
+
+#currentEducation{
+    padding: 100px 30px;
+    background-color: black;
+    color: white
+}
+
+#currentEducation .header2{
+    font-size: 90px;
+}
+
+#personalAchivements{
+    padding: 100px 30px;
+    background-color: rgb(60, 60, 60);
+    color: white
+}
+
+#personalAchivements .header2{
+    font-size: 90px;
+}
+
 #image{
     margin-top: 10px;
     border-radius: 10px;
@@ -63,6 +93,13 @@ a {
     align-items: center;
     padding: 0px 40px;
     justify-content: flex-start;
+}
+
+#navigationBar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: rgb(230, 226, 226);
 }
 
 @media (max-width: 800px) {
