@@ -32,6 +32,16 @@ a {
     padding: 0px 50px;
 }
 
+#summary{
+    padding: 100px 30px;
+    background-color: black;
+    color: white
+}
+
+#summary .header2{
+    font-size: 90px;
+}
+
 #image{
     margin-top: 10px;
     border-radius: 10px;
@@ -61,16 +71,16 @@ a {
   }
 }
 
+#qualities li{
+    list-style-type: none;
+    padding: 3px 0px;
+}
 
 #qualities li::before{
     content: url(/check.svg);
     padding-right: 3px;
 }
 
-#qualities li{
-    list-style-type: none;
-    padding: 3px 0px;
-}
 
 #navigationBar div:first-child{
     min-width: 300px;
