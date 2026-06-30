@@ -24,16 +24,22 @@
         </ul>
        </div>
     </div>
-    <hr class="border"/>
-    <div id="content">
+    <div class="container">
+    <form action="action_page.php">
 
-   <div>
-    <h1 style="text-decoration: underline;">Get in contact with me</h1>
-    <form>
-        <label for="fname">First and last name:</label><br>
-        <input type="text" id="fname" name="fname"><br><br>
+        <label for="fname">First and last name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+
+        <label for="contactNumber">Contact Number </label>
+        <input type="text" id="number" name="number" placeholder="Your phone number..">
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subeject" placeholder="Tell me about yourself.." style="height:200px"></textarea>
+
         <input type="submit" value="Submit">
+
     </form>
+    </div>
     
     </div>
 </body>

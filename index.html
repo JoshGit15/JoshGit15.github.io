@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Josh Resume</title>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <link rel="icon" type="image/x-icon" href="/Favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,27 @@
 
 </head>
 <body>
+
+    <script>
+
+let mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0; 
+}
+    </script>
     <div id="navigationBar">
         <div>
              <h1 class="header1"><a href="index.html">Joshua Halpin CV</a></h1>
@@ -24,7 +46,6 @@
         </ul>
        </div>
     </div>
-    <hr class="border"/>
     <div id="content">
         <div id = "summary">
             <h2 class="header2">Summary</h2>
