@@ -357,6 +357,12 @@ footer {
 /* MOBILE STYLES */
 @media (max-width: 800px) {
 
+    .header2 {
+        font-size: 32px;
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+}
     .header1 {
         font-size: 22px;
         text-align: center;
