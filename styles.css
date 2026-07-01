@@ -117,25 +117,24 @@ a {
 }
 
 @media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 500px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-}
-
-@media (max-width: 768px) {
 
     .modal-content {
+        display: flex !important;
         flex-direction: column;
-        width: 95%;
-        height: auto;
-        max-height: 90vh;
-        overflow-y: auto;
+
+        width: 95vw;
+        max-width: 95vw;
+
+        padding: 15px;
+        margin: 0;
+
+        gap: 15px;
     }
 
     .modal-left,
@@ -143,9 +142,17 @@ a {
         width: 100%;
     }
 
+    .modal-left img,
     #modalImage {
+        display: block;
+
         width: 100%;
+        max-width: 100%;
+
         height: auto;
+        max-height: 60vh;
+
+        object-fit: contain;
     }
 }
 

@@ -270,6 +270,9 @@ nav.addEventListener("click", function (e) {
 </script>
 
 <script>
+const modal = document.getElementById("imageModal");
+const modalContent = document.querySelector(".modal-content");
+
 function openModal(el) {
     const img = el.querySelector("img");
 
@@ -277,15 +280,12 @@ function openModal(el) {
     document.getElementById("modalTitle").textContent = img.dataset.title;
     document.getElementById("modalDesc").textContent = img.dataset.desc;
 
-    document.getElementById("imageModal").style.display = "block";
+    modal.style.display = "flex";   // Changed from "block"
 }
 
 function closeModal() {
-    document.getElementById("imageModal").style.display = "none";
+    modal.style.display = "none";
 }
-
-const modal = document.getElementById("imageModal");
-const modalContent = document.querySelector(".modal-content");
 
 // Clicking the dark background closes the modal
 modal.addEventListener("click", closeModal);
@@ -294,10 +294,9 @@ modal.addEventListener("click", closeModal);
 modalContent.addEventListener("click", function (e) {
     e.stopPropagation();
 });
-</script>
 
-<script>
-    document.addEventListener("keydown", function (e) {
+// Escape key closes the modal
+document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
         closeModal();
     }
