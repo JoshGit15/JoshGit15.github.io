@@ -67,32 +67,55 @@
             <p>My current subejects are, English, Maths, Marine Science, Sport Lifestyle and Recreation (SLR), and I am also completing a certificate III TAFE course in Information Technology.</p>
         </div>
 
-    <div id="portfolio">
-    <h2 class="header2">3D Modelling Portfolio</h2>
+<div id="portfolio">
 
-    <p>
-        Here are some of my 3D modelling projects that I have created using blender. Self-taught
+    <h2 class="header2"> Self-Taught 3D Modelling Portfolio</h2>
+
+    <p class="portfolio-intro">
+        Below are a selection of 3D modelling projects I have created using Blender.
+        Each project has helped me develop different skills including hard-surface
+        modelling, lighting, texturing, composition and environment design.
+        Click any image to learn more.
     </p>
 
     <div class="portfolio-grid">
 
-        <div class="portfolio-item">
-            <img src="your-image-1.jpg" alt="3D Model 1">
+        <!-- Isometric Bedroom -->
+        <div class="portfolio-item" onclick="openModal(this)">
+            <img
+                src="Isometric Bedroom.png"
+                alt="Isometric Bedroom"
+                data-title="Isometric Bedroom"
+                data-desc="This project focused on creating a stylised bedroom scene in Blender. I practised lighting, composition, modelling furniture, and creating realistic wood and fabric materials."
+            >
             <p>Isometric Bedroom</p>
         </div>
 
-        <div class="portfolio-item">
-            <img src="your-image-2.jpg" alt="3D Model 2">
-            <p>Coke Can</p>
+        <!-- Coke Can -->
+        <div class="portfolio-item" onclick="openModal(this)">
+            <img
+                src="Can.png"
+                alt="Coke Can"
+                data-title="Coca-Cola Can"
+                data-desc="A hard-surface modelling exercise designed to improve my understanding of subdivision modelling, realistic materials, lighting and product rendering."
+            >
+            <p>Coca-Cola Can</p>
         </div>
 
-        <div class="portfolio-item">
-            <img src="your-image-3.jpg" alt="3D Model 3">
+        <!-- Stylized Temple -->
+        <div class="portfolio-item" onclick="openModal(this)">
+            <img
+                src="Stylized Temple.png"
+                alt="Stylized Temple"
+                data-title="Stylized Temple"
+                data-desc="An environment art project inspired by stylised architecture. This scene helped me improve my modelling workflow, texture painting and overall scene presentation."
+            >
             <p>Stylized Temple</p>
         </div>
 
     </div>
-    </div>
+
+</div>
         
 <div id="personalAchivements">
     <h2 class="header2">Personal Achievements</h2>
@@ -138,6 +161,25 @@
         <p>Jdmh.joshua@gmail.com</p>
     </footer>
     </div>
+
+<div id="imageModal" class="modal">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <div class="modal-content">
+
+        <div class="modal-left">
+            <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-right">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+        </div>
+
+    </div>
+
+</div>
     
     <script>
 const themeBtn = document.getElementById("themeBtn");
@@ -221,6 +263,29 @@ nav.addEventListener("click", function (e) {
     nav.classList.remove("open");
     menuIcon.classList.remove("change");
   }
+});
+</script>
+
+<script>
+    function openModal(el) {
+    const img = el.querySelector("img");
+
+    document.getElementById("modalImage").src = img.src;
+    document.getElementById("modalTitle").textContent = img.dataset.title;
+    document.getElementById("modalDesc").textContent = img.dataset.desc;
+
+    document.getElementById("imageModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+// close when clicking outside content
+document.getElementById("imageModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
 });
 </script>
 </body>
