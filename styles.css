@@ -44,7 +44,7 @@ a {
     margin-top: 20px;
     font-weight: 700;
 }
-
+    
 .header2 {
     text-decoration: underline;
     font-weight: 600;
@@ -56,15 +56,24 @@ a {
     border-color: black;
 }
 
+@media (max-width: 768px) {
+
+    #summary .header2,
+    #personalQualities .header2,
+    #currentEducation .header2,
+    #personalAchivements .header2,
+    #portfolio .header2 {
+        font-size: clamp(2rem, 9vw, 4rem);
+        line-height: 1.1;
+    }
+
+}
+
 
 #summary{
     padding: 100px 30px 350px 30px;
     background-color: black;
     color: white
-}
-
-#summary .header2{
-    font-size: 90px;
 }
 
 #personalQualities{
@@ -73,18 +82,10 @@ a {
     color: white
 }
 
-#personalQualities .header2{
-    font-size: 90px;
-}
-
 #currentEducation{
     padding: 200px 30px;
     background-color: black;
     color: white
-}
-
-#currentEducation .header2{
-    font-size: 90px;
 }
 
 #portfolio {
@@ -233,10 +234,6 @@ a {
     padding: 100px 30px;
     background-color: rgb(60, 60, 60);
     color: white
-}
-
-#personalAchivements .header2{
-    font-size: 90px;
 }
 
 .accordion {
