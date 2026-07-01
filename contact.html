@@ -1,165 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Josh Resume - Contact</title>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Joshua Halpin</title>
 
-    <link rel="icon" type="image/x-icon" href="/Favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/Favicon.png">
 
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Optional icons -->
+    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<!-- TOP BUTTON -->
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<!-- ================= NAV BAR ================= -->
+<header id="navigationBar">
 
-<!-- NAVIGATION -->
-<div id="navigationBar">
+    <h1 class="header1">
+        <a href="index.html">Joshua Halpin CV</a>
+    </h1>
 
-    <div>
-        <h1 class="header1"><a href="index.html">Joshua Halpin CV</a></h1>
+    <div class="menu-icon" onclick="toggleMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
 
-    <div id="icon">
-        <div class="menu-icon" onclick="toggleMenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+</header>
+
+<!-- ================= OVERLAY MENU ================= -->
+<nav id="myNav" class="overlay">
+    <div class="overlay-content">
+        <a href="index.html#summary">Summary</a>
+        <a href="index.html#aboutMe">About Me</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#personalAchivements">Achievements</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="javascript:void(0)" id="themeBtn">Dark Mode</a>
+    </div>
+</nav>
+<!-- ================= WEATHER SECTION ================= -->
+ <section class="weather-section">
+
+    <h2 class="weather-title">Current Weather</h2>
+
+    <div class="weather-card">
+        <div id="weather-result">
+            Loading weather data...
         </div>
     </div>
 
-    <div id="myNav" class="overlay">
-        <div class="overlay-content">
-            <a href="index.html#summary">Summary</a>
-            <a href="index.html#personalQualities">Personal Qualities</a>
-            <a href="index.html#currentEducation">Current Education</a>
-            <a href="index.html#portfolio">3D Modelling</a>
-            <a href="index.html#personalAchivements">Personal Achievements</a>
+</section>
+<!-- ================= CONTACT SECTION ================= -->
+<main class="contact-page">
 
-            <div class="menu-item">
-                <a href="contact.html">Contact Me</a>
-                <a href="javascript:void(0)" id="themeBtn">Dark Mode</a>
-            </div>
+    <section class="contact-hero">
+        <h2>Get In Touch</h2>
+        <p>Feel free to reach out for any questions you might have.</p>
+    </section>
+
+    <section class="contact-container">
+
+        <!-- CONTACT INFO CARD -->
+        <div class="contact-card">
+
+            <h3>Contact Information</h3>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <strong>Email:</strong> jdmh.joshua@gmail.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <strong>Location:</strong> Sydney, Australia
+            </p>
+
+            <p>
+                <i class="fa-solid fa-user"></i>
+                <strong>Status:</strong> Open to part-time / entry-level roles
+            </p>
+
         </div>
-    </div>
-</div>
 
-<!-- CONTACT FORM -->
-<div class="container">
+        <!-- CONTACT FORM -->
+        <form class="contact-form">
 
-    <form name="contactForm">
+            <h3>Send a Message</h3>
 
-        <label>First and last name</label>
-        <input type="text" name="fname" placeholder="Your name..">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" required>
 
-        <label>Contact Number</label>
-        <input type="text" name="number" placeholder="Your phone number..">
+            <label>Email</label>
+            <input type="email" placeholder="Your email" required>
 
-        <label>Subject</label>
-        <textarea name="subject" placeholder="Tell me about yourself.." style="height:200px"></textarea>
+            <label>Subject</label>
+            <input type="text" placeholder="Subject">
 
-        <p id="message"></p>
+            <label>Message</label>
+            <textarea rows="6" placeholder="Write your message..." required></textarea>
 
-        <button type="button" onclick="validateForm()">Submit</button>
+            <button type="submit">Send Message</button>
 
-    </form>
+        </form>
 
-</div>
+    </section>
 
-<!-- FOOTER -->
+</main>
+
+<!-- ================= FOOTER ================= -->
 <footer>
     <p>Joshua Halpin</p>
-    <p>Jdmh.joshua@gmail.com</p>
+    <p>Email: jdmh.joshua@gmail.com</p>
 </footer>
 
-<!-- JAVASCRIPT -->
+<!-- ================= SCRIPT ================= -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const nav = document.getElementById("myNav");
+const menuIcon = document.querySelector(".menu-icon");
 
-  /* ================= NAV MENU ================= */
-  const nav = document.getElementById("myNav");
-  const menuIcon = document.querySelector(".menu-icon");
-
-  window.toggleMenu = function (icon) {
+function toggleMenu(icon) {
+    if (!nav || !menuIcon) return;
     icon.classList.toggle("change");
     nav.classList.toggle("open");
-  };
+}
 
-  document.querySelectorAll(".overlay-content a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      menuIcon.classList.remove("change");
+if (nav && menuIcon) {
+    document.querySelectorAll(".overlay-content a").forEach(link => {
+        link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            menuIcon.classList.remove("change");
+        });
     });
-  });
 
-  nav.addEventListener("click", (e) => {
-    if (e.target === nav) {
-      nav.classList.remove("open");
-      menuIcon.classList.remove("change");
-    }
-  });
+    nav.addEventListener("click", (e) => {
+        if (e.target === nav) {
+            nav.classList.remove("open");
+            menuIcon.classList.remove("change");
+        }
+    });
+}
 
+<!-- ================= Theme Toogle ================= -->
+const themeBtn = document.getElementById("themeBtn");
 
-  /* ================= DARK MODE ================= */
-  const themeBtn = document.getElementById("themeBtn");
-
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    if (themeBtn) themeBtn.textContent = "Light Mode";
-  }
-
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
+if (themeBtn) {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
         themeBtn.textContent = "Light Mode";
-      } else {
-        localStorage.setItem("theme", "light");
-        themeBtn.textContent = "Dark Mode";
-      }
+    }
+
+    themeBtn.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        themeBtn.textContent = isDark ? "Light Mode" : "Dark Mode";
     });
-  }
+}
 
+// Weather
+const latitude = -34.425072;
+const longitude = 150.893143;
 
-  /* ================= FORM VALIDATION ================= */
-  window.validateForm = function () {
-    const name = document.forms["contactForm"]["fname"].value;
-    const message = document.getElementById("message");
+const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,wind_speed_10m`;
 
-    if (!name) {
-      message.textContent = "Name is required";
-      message.style.color = "red";
-      return;
-    }
+fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Weather API failed");
+        }
+        return response.json();
+    })
+    .then(data => {
 
-    message.textContent = "Message ready to send!";
-    message.style.color = "green";
-  };
+        const temp = data.current.temperature_2m;
+        const wind = data.current.wind_speed_10m;
 
-
-  /* ================= TOP BUTTON ================= */
-  const myBtn = document.getElementById("myBtn");
-
-  window.onscroll = function () {
-    if (document.documentElement.scrollTop > 300) {
-      myBtn.style.display = "block";
-    } else {
-      myBtn.style.display = "none";
-    }
-  };
-
-  window.topFunction = function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-});
+        document.getElementById('weather-result').innerHTML = `
+            <p>🌡️ Temperature: ${temp}°</p>
+            <p>💨 Wind Speed: ${wind}</p>
+        `;
+    })
+    .catch(error => {
+        document.getElementById('weather-result').innerHTML =
+            "⚠️ Weather failed to load";
+        console.error(error);
+    });
 </script>
 
 </body>

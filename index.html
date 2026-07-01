@@ -1,170 +1,282 @@
-<!DOCTYPE html lang=EN>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Josh Resume</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Joshua Halpin | CV</title>
+
     <link rel="icon" type="image/x-icon" href="/Favicon.png">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+<!-- ================= BACK TO TOP ================= -->
+<button onclick="topFunction()" id="myBtn">Top</button>
 
-    
-    <button onclick="topFunction()" id="myBtn" title="Go to top"> Top </button>
-    <div id="navigationBar">
+<!-- ================= HEADER ================= -->
+<header id="navigationBar">
 
-        
-        <div>
-             <h1 class="header1"><a href="index.html">Joshua Halpin CV</a></h1>
-        </div>
+    <h1 class="header1">
+        <a href="index.html">Joshua Halpin CV</a>
+    </h1>
 
-    <div id = "icon">
+    <div id = "rightNavigation">
+
         <div class="menu-icon" onclick="toggleMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
+
+    <button id="toggleButton" type="button">
+        <span class="btn-text">Light Mode</span>
+        <span class="btn-icon">☀️</span>
+    </button>
+
     </div>
 
-        <div id="myNav" class="overlay">
+</header>
 
-        <div class="overlay-content">
-            <a href="#summary">Summary</a>
-            <a href="#personalQualities">Personal Qualities</a>
-            <a href="#currentEducation">Current Education</a>
-            <a href="#portfolio">3D Modelling</a>
-            <a href="#personalAchivements">Personal Achievements</a>
-            <div class="menu-item">
-            <a href="contact.html">Contact Me</a>               
-            <a href="javascript:void(0)" id="themeBtn">Dark Mode</a>    </div>
-       </div>
-       </div>
+<!-- ================= NAV OVERLAY ================= -->
+<nav id="myNav" class="overlay">
+    <div class="overlay-content">
+
+        <a href="#summary">Summary</a>
+        <a href="#about">About Me</a>
+        <a href="#qualities">Skills & Qualities</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#achievements">Achievements</a>
+        <a href="contact.html">Contact</a>
+
     </div>
-    <div id="content">
-        <div id = "summary">
-            <h2 class="header2">Summary</h2>
-            <p> I'm very motivated to get my first part time job so that I can start pursuing my intrest in software engineering. My goals are to work towards financial independance and to broarden my social network.</p>
-        </div>
-        
-        <div id = "personalQualities">
-            <h2 class="header2"> Personal Qualities</h2>
-            <ul id = "qualities">
-                <li>Effective communication</li>
-                <li>Teamwork</li>
-                <li>Adaptable</li>
-                <li>Patient</li>
-                <li>Friendly</li>
-                <li>Confident</li>
-                <li>Focused</li>
-                <li>Role model</li>
-            </ul>
-        </div>
+</nav>
 
-        
-        <div id = "currentEducation">
-            <h2 class="header2">Current Education</h2>
-            <p>Currently I am enrolled in school completing Year 12 at Bulli High School.</p>
-            <p>My current subejects are, English, Maths, Marine Science, Sport Lifestyle and Recreation (SLR), and I am also completing a certificate III TAFE course in Information Technology.</p>
-        </div>
+<!-- ================= MAIN CONTENT ================= -->
+<main>
 
-<div id="portfolio">
-
-    <h2 class="header2"> Self-Taught 3D Modelling Portfolio</h2>
-
-    <p class="portfolio-intro">
-        Below are a selection of 3D modelling projects I have created using Blender.
-        Each project has helped me develop different skills including hard-surface
-        modelling, lighting, texturing, composition and environment design.
-        Click any image to learn more.
+<!-- ===== SUMMARY ===== -->
+<section id="summary">
+    <h2>Summary</h2>
+    <p>
+        Motivated Year 12 student with a strong interest in software development, 3D design,
+        and information technology. Seeking opportunities to further develop practical skills
+        in real-world environments.
     </p>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+    <h2>About Me</h2>
+
+    <p>
+        I am a Year 12 student at Bulli High School with a growing interest in software engineering,
+        3D modelling, and digital design.
+    </p>
+
+    <p>
+        I enjoy building practical projects using web technologies and Blender, with a focus on
+        improving both technical ability and problem-solving skills.
+    </p>
+</section>
+
+<!-- ===== QUALITIES ===== -->
+<section id="qualities">
+    <h2>Skills & Personal Qualities</h2>
+
+    <ul>
+        <li>Strong communication and teamwork skills</li>
+        <li>Adaptable and quick learner</li>
+        <li>Problem-solving mindset</li>
+        <li>Leadership and initiative</li>
+        <li>Consistent attention to detail</li>
+    </ul>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+    <h2>Education</h2>
+
+    <p>
+        Year 12 Student — Bulli High School
+    </p>
+
+    <p>
+        Current subjects include English, Mathematics, Marine Science, SLR, and Certificate III in IT (TAFE).
+    </p>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-category">
+            <h3>Web Development</h3>
+            <p>HTML5 (Basic)</p>
+            <p>JavaScript (Basic)</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Development Tools</h3>
+            <p>Git & GitHub</p>
+            <p>Visual Studio Code</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>3D Design</h3>
+            <p>Blender Modelling</p>
+            <p>Rendering & Lighting</p>
+        </div>
+
+        <div class="skill-category">
+            <h3>Productivity Tools</h3>
+            <p>Microsoft Word</p>
+            <p>Excel</p>
+            <p>PowerPoint</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio">
+
+    <h2>3D Modelling Portfolio</h2>
 
     <div class="portfolio-grid">
 
-        <!-- Isometric Bedroom -->
         <div class="portfolio-item" onclick="openModal(this)">
-            <img
-                src="Isometric Bedroom.png"
-                alt="Isometric Bedroom"
-                data-title="Isometric Bedroom"
-                data-desc="This project focused on creating a stylised bedroom scene in Blender. I practised lighting, composition, modelling furniture, and creating realistic wood and fabric materials."
-            >
-            <p>Isometric Bedroom</p>
+            <img src="Isometric Bedroom.png"
+                 data-title="Isometric Bedroom"
+                 data-desc="A study in lighting, composition, and interior modelling using Blender.">
+
+            <div class="portfolio-text">
+                <h3>Isometric Bedroom</h3>
+                <p>Lighting • Composition</p>
+            </div>
         </div>
 
-        <!-- Coke Can -->
         <div class="portfolio-item" onclick="openModal(this)">
-            <img
-                src="Can.png"
-                alt="Coke Can"
-                data-title="Coca-Cola Can"
-                data-desc="A hard-surface modelling exercise designed to improve my understanding of subdivision modelling, realistic materials, lighting and product rendering."
-            >
-            <p>Coca-Cola Can</p>
+            <img src="Can.png"
+                 data-title="Coca-Cola Can"
+                 data-desc="Hard-surface modelling and realistic material rendering practice.">
+
+            <div class="portfolio-text">
+                <h3>Can Model</h3>
+                <p>Materials • Hard Surface</p>
+            </div>
         </div>
 
-        <!-- Stylized Temple -->
         <div class="portfolio-item" onclick="openModal(this)">
-            <img
-                src="Stylized Temple.png"
-                alt="Stylized Temple"
-                data-title="Stylized Temple"
-                data-desc="An environment art project inspired by stylised architecture. This scene helped me improve my modelling workflow, texture painting and overall scene presentation."
-            >
-            <p>Stylized Temple</p>
+            <img src="Stylized Temple.png"
+                 data-title="Stylized Temple"
+                 data-desc="Environment design focusing on stylised architecture and lighting.">
+
+            <div class="portfolio-text">
+                <h3>Stylized Temple</h3>
+                <p>Environment • Lighting</p>
+            </div>
+        </div>
+
+        <div class="portfolio-item" onclick="openModal(this)">
+            <img src="Chair.png"
+                 data-title="Hard Surface Chair"
+                 data-desc="Focused on precision modelling, edge control, and clean topology workflows.">
+
+            <div class="portfolio-text">
+                <h3>Hard Surface Chair</h3>
+                <p>Modelling • Design</p>
+            </div>
         </div>
 
     </div>
 
-</div>
-        
-<div id="personalAchivements">
-    <h2 class="header2">Personal Achievements</h2>
+</section>
 
-    <div class="achievement">
+<!-- ===== ACHIEVEMENTS ===== -->
+<section id="achievements">
 
-        <button class="accordion">NSW State Boccia
-            <span class="arrow">▸</span>
+    <h2>Achievements</h2>
+
+    <!-- NSW State Boccia -->
+    <div class="achievement-card">
+
+        <button class="achievement-toggle">
+            NSW State Boccia
+            <span class="arrow">⌄</span>
         </button>
 
-        <div class="panel">
-            <img src="https://www.illawarramercury.com.au/images/transform/v1/crop/frm/gzajA9j5yvatvSgWamdNVy/4f8578fb-205f-4756-a422-efad94ff7703.jpg/r576_0_5184_2592_w1200_h678_fmax.jpg"
-                 alt="Bulli High School Boccia Team"
-                 class="achievement-img"/>
+        <div class="achievement-content">
+
+            <div class="achievement-body">
+
+                <img src="Boccia.jpg" class="achievement-img" alt="NSW State Boccia">
+
+                <div class="achievement-text">
+                    <p>
+                        Represented my school in Boccia for three years, reaching state-level
+                        competitions and achieving a championship victory.
+                    </p>
+
+                    <p>
+                        Also supported and mentored junior players, helping them develop their
+                        skills and confidence.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Student Representative Council -->
+    <div class="achievement-card">
+
+        <button class="achievement-toggle">
+            Student Representative Council
+            <span class="arrow">⌄</span>
+        </button>
+
+        <div class="achievement-content">
 
             <p>
-                During my time on the school Boccia team we worked together for over 3 years, learning communication and strategy. We qualified for state twice and won once. In year 12 since it was my final year I took on a coaching/mentoring role to teach two year 7 boys to take over the team and hopefully play all the way through till they are in year 12.
+                Contributed to school leadership over three years by assisting with event
+                organisation, fundraising activities, and student engagement initiatives.
             </p>
+
+            <p>
+                Helped represent student voices and supported the coordination of school events.
+            </p>
+
         </div>
+
     </div>
 
-<div class="achievement">
+</section>
 
-</div>
+</main>
 
-    <button class="accordion">
-        Student Representative Council 
-    <span class="arrow">▸</span>
-    </button>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>Joshua Halpin</p>
+    <p>Email: jdmh.joshua@gmail.com</p>
+</footer>
 
-    <div class="panel">
-        <p>
-            I was part of the Student Representative Council for 3 years where I volunteered multiple times per year to organize numerous activities for the school and fundraisers.
-        </p>
-    </div>
-
-</div>
-</div>
-
-    <div>
-    <footer>
-        <p>Joshua Halpin</p>
-        <p>Jdmh.joshua@gmail.com</p>
-    </footer>
-    </div>
-
+<!-- ================= MODAL ================= -->
 <div id="imageModal" class="modal">
 
     <span class="close" onclick="closeModal()">&times;</span>
@@ -172,7 +284,7 @@
     <div class="modal-content">
 
         <div class="modal-left">
-            <img id="modalImage" src="" alt="">
+            <img id="modalImage">
         </div>
 
         <div class="modal-right">
@@ -183,124 +295,174 @@
     </div>
 
 </div>
-    
-    <script>
-const themeBtn = document.getElementById("themeBtn");
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    themeBtn.textContent = "Light Mode";
+<!-- ================= SCRIPT ================= -->
+<script>
+    /* =====================================================
+   ELEMENTS
+===================================================== */
+
+const nav = document.getElementById("myNav");
+const menuIcon = document.querySelector(".menu-icon");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+
+
+/* =====================================================
+   HAMBURGER MENU
+===================================================== */
+
+function toggleMenu(icon) {
+    if (!nav || !menuIcon) return;
+
+    icon.classList.toggle("change");
+    nav.classList.toggle("open");
 }
 
-// Toggle theme
-themeBtn.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
+// Close menu when clicking a link
+document.querySelectorAll(".overlay-content a").forEach(link => {
+    link.addEventListener("click", () => {
+        if (!nav || !menuIcon) return;
 
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        themeBtn.textContent = "Light Mode";
-    } else {
-        localStorage.setItem("theme", "light");
-        themeBtn.textContent = "Dark Mode";
+        nav.classList.remove("open");
+        menuIcon.classList.remove("change");
+    });
+});
+
+// Close menu when clicking outside
+if (nav) {
+    nav.addEventListener("click", (e) => {
+        if (e.target === nav) {
+            nav.classList.remove("open");
+            if (menuIcon) menuIcon.classList.remove("change");
+        }
+    });
+}
+
+// ESC key closes menu + modal
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        if (nav) nav.classList.remove("open");
+        if (menuIcon) menuIcon.classList.remove("change");
+        closeModal();
     }
 });
-</script>
 
-<script>
-const myBtn = document.getElementById("myBtn");
 
-window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        myBtn.style.display = "block";
-    } else {
-        myBtn.style.display = "none";
-    }
-};
+/* =====================================================
+   BACK TO TOP
+===================================================== */
 
-// Scroll to top
 function topFunction() {
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 }
-</script>
 
-<script>
-    document.querySelectorAll(".accordion").forEach(btn => {
-        btn.addEventListener("click", function () {
+const topBtn = document.getElementById("myBtn");
 
-            const panel = this.nextElementSibling;
+window.addEventListener("scroll", () => {
 
-            console.log("Panel before:", panel.classList);
+    if (window.scrollY > 300) {
+        topBtn.classList.add("show");
+    } else {
+        topBtn.classList.remove("show");
+    }
 
-            panel.classList.toggle("open");
+});
 
-            console.log("Panel after:", panel.classList);
-        });
+
+/* =====================================================
+   THEME TOGGLE
+===================================================== */
+
+let theme = localStorage.getItem("theme");
+let themeBtn = document.getElementById("toggleButton");
+
+if (themeBtn) {
+
+    const savedTheme = localStorage.getItem("theme");
+
+    const text = themeBtn.querySelector(".btn-text");
+    const icon = themeBtn.querySelector(".btn-icon");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        if (text) text.textContent = "Dark Mode";
+        if (icon) icon.textContent = "🌙";
+    } else {
+        if (text) text.textContent = "Light Mode";
+        if (icon) icon.textContent = "☀️";
+    }
+
+    themeBtn.addEventListener("click", () => {
+
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        if (text) {
+            text.textContent = isDark ? "Dark Mode" : "Light Mode";
+        }
+
+        if (icon) {
+            icon.textContent = isDark ? "🌙" : "☀️";
+        }
     });
-</script>
-
-<script>
-const nav = document.getElementById("myNav");
-const menuIcon = document.querySelector(".menu-icon");
-
-// Open / close menu
-function toggleMenu(icon) {
-  icon.classList.toggle("change");
-  nav.classList.toggle("open");
 }
 
-// Close when clicking a link inside menu
-document.querySelectorAll(".overlay-content a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuIcon.classList.remove("change");
-  });
+
+/* =====================================================
+   DROPDOWNS
+===================================================== */
+
+document.querySelectorAll(".achievement-card").forEach(card => {
+
+    const btn = card.querySelector(".achievement-toggle");
+
+    btn.addEventListener("click", () => {
+        card.classList.toggle("open");
+    });
+
 });
 
-// Close when clicking outside the menu content
-nav.addEventListener("click", function (e) {
-  if (e.target === nav) {
-    nav.classList.remove("open");
-    menuIcon.classList.remove("change");
-  }
-});
-</script>
 
-<script>
-const modal = document.getElementById("imageModal");
-const modalContent = document.querySelector(".modal-content");
+/* =====================================================
+   MODAL (IMAGE ZOOM)
+===================================================== */
 
 function openModal(el) {
+    if (!modal || !modalImg) return;
+
     const img = el.querySelector("img");
 
-    document.getElementById("modalImage").src = img.src;
-    document.getElementById("modalTitle").textContent = img.dataset.title;
-    document.getElementById("modalDesc").textContent = img.dataset.desc;
+    modalImg.src = img.src;
 
-    modal.style.display = "flex";   // Changed from "block"
+    if (modalTitle) modalTitle.textContent = img.dataset.title || "";
+    if (modalDesc) modalDesc.textContent = img.dataset.desc || "";
+
+    modal.style.display = "block";
 }
 
 function closeModal() {
+    if (!modal) return;
     modal.style.display = "none";
 }
 
-// Clicking the dark background closes the modal
-modal.addEventListener("click", closeModal);
-
-// Clicking the image or text does NOT close it
-modalContent.addEventListener("click", function (e) {
-    e.stopPropagation();
-});
-
-// Escape key closes the modal
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        closeModal();
-    }
-});
+// Click outside modal closes it
+if (modal) {
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}
 </script>
+
+
+
 </body>
 </html>
