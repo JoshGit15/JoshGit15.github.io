@@ -270,7 +270,7 @@ nav.addEventListener("click", function (e) {
 </script>
 
 <script>
-    function openModal(el) {
+function openModal(el) {
     const img = el.querySelector("img");
 
     document.getElementById("modalImage").src = img.src;
@@ -284,9 +284,21 @@ function closeModal() {
     document.getElementById("imageModal").style.display = "none";
 }
 
-// close when clicking outside content
-document.getElementById("imageModal").addEventListener("click", function(e) {
-    if (e.target === this) {
+const modal = document.getElementById("imageModal");
+const modalContent = document.querySelector(".modal-content");
+
+// Clicking the dark background closes the modal
+modal.addEventListener("click", closeModal);
+
+// Clicking the image or text does NOT close it
+modalContent.addEventListener("click", function (e) {
+    e.stopPropagation();
+});
+</script>
+
+<script>
+    document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
         closeModal();
     }
 });
