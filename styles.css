@@ -4,6 +4,14 @@
 body {
     background-color: rgb(230, 226, 226);
     font-family: 'Google Sans';
+    p,
+    h1,
+    h2,
+    h3,
+    li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
 }
 
 #myBtn {
@@ -105,6 +113,39 @@ a {
     border-radius: 12px;
     padding: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .modal-content {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-left,
+    .modal-right {
+        width: 100%;
+    }
+
+    #modalImage {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .portfolio-item:hover {
@@ -322,10 +363,21 @@ img:hover {
     border-bottom: 5px solid black;
 }
 
-@media (max-width: 800px) {
-  #navigationBar {
-    flex-direction: column;
-  }
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p,
+    li {
+        font-size: 1rem;
+    }
+
 }
 
 #qualities li{
