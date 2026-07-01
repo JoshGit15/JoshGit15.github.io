@@ -12,18 +12,32 @@
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top"> Top </button>
     <div id="navigationBar">
+
+        
         <div>
              <h1 class="header1"><a href="index.html">Joshua Halpin CV</a></h1>
         </div>
-       <div class="navigation">
-         <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#personalQualities">Personal Qualities</a></li>
-            <li><a href="#currentEducation">Current Education</a></li>
-            <li><a href="#personalAchivements">Personal Achivements</a></li>
-            <li><a href="contact.html">Contact Me</a></li>
-            <li> <button id="themeBtn">darkMode</button> </li>
-        </ul>
+
+    <div id = "icon">
+        <div class="menu-icon" onclick="toggleMenu(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        </div>
+    </div>
+
+        <div id="myNav" class="overlay">
+
+        <div class="overlay-content">
+            <a href="#summary">Summary</a>
+            <a href="#personalQualities">Personal Qualities</a>
+            <a href="#currentEducation">Current Education</a>
+            <a href="#portfolio">3D Modelling</a>
+            <a href="#personalAchivements">Personal Achievements</a>
+            <div class="menu-item">
+            <a href="contact.html">Contact Me</a>               
+            <a href="javascript:void(0)" id="themeBtn">Dark Mode</a>    </div>
+       </div>
        </div>
     </div>
     <div id="content">
@@ -49,10 +63,36 @@
         
         <div id = "currentEducation">
             <h2 class="header2">Current Education</h2>
-            <p>Currently I am enrolled in school completing year 12 at bulli high school.</p>
+            <p>Currently I am enrolled in school completing Year 12 at Bulli High School.</p>
             <p>My current subejects are, English, Maths, Marine Science, Sport Lifestyle and Recreation (SLR), and I am also completing a certificate III TAFE course in Information Technology.</p>
         </div>
 
+    <div id="portfolio">
+    <h2 class="header2">3D Modelling Portfolio</h2>
+
+    <p>
+        Here are some of my 3D modelling projects that I have created using blender. Self-taught
+    </p>
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-item">
+            <img src="your-image-1.jpg" alt="3D Model 1">
+            <p>Isometric Bedroom</p>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="your-image-2.jpg" alt="3D Model 2">
+            <p>Coke Can</p>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="your-image-3.jpg" alt="3D Model 3">
+            <p>Stylized Temple</p>
+        </div>
+
+    </div>
+    </div>
         
 <div id="personalAchivements">
     <h2 class="header2">Personal Achievements</h2>
@@ -76,6 +116,8 @@
 
 <div class="achievement">
 
+</div>
+
     <button class="accordion">
         Student Representative Council 
     <span class="arrow">▸</span>
@@ -93,7 +135,7 @@
     <div>
     <footer>
         <p>Joshua Halpin</p>
-        <p>Joshua.jdmh@gmail.com</p>
+        <p>Jdmh.joshua@gmail.com</p>
     </footer>
     </div>
     
@@ -155,6 +197,31 @@ function topFunction() {
     });
 </script>
 
+<script>
+const nav = document.getElementById("myNav");
+const menuIcon = document.querySelector(".menu-icon");
 
+// Open / close menu
+function toggleMenu(icon) {
+  icon.classList.toggle("change");
+  nav.classList.toggle("open");
+}
+
+// Close when clicking a link inside menu
+document.querySelectorAll(".overlay-content a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuIcon.classList.remove("change");
+  });
+});
+
+// Close when clicking outside the menu content
+nav.addEventListener("click", function (e) {
+  if (e.target === nav) {
+    nav.classList.remove("open");
+    menuIcon.classList.remove("change");
+  }
+});
+</script>
 </body>
 </html>
