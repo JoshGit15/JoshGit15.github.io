@@ -29,27 +29,35 @@
         <a href="index.html">Joshua Halpin</a>
     </h1>
 
-    <div id = "rightNavigation">
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+        <a href="#summary">Summary</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#achievements">Achievements</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
+    <div id="rightNavigation">
+
+        <!-- HAMBURGER (MOBILE ONLY) -->
         <div class="menu-icon" onclick="toggleMenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
 
-    <button id="toggleButton" type="button">
-        <span class="btn-text">Light Mode</span>
-        <span class="btn-icon">☀️</span>
-    </button>
-
-    </div>
-
-    <div id="scrollProgress">
-    <div id="scrollBar"></div>
+        <!-- THEME BUTTON -->
+        <button id="toggleButton" type="button">
+            <span class="btn-text">Light Mode</span>
+            <span class="btn-icon">☀️</span>
+        </button>
 
     </div>
 
 </header>
+
 
 <!-- ================= NAV OVERLAY ================= -->
 <nav id="myNav" class="overlay">
@@ -333,10 +341,8 @@ let themeBtn = document.getElementById("toggleButton");
 ===================================================== */
 
 function toggleMenu(icon) {
-    if (!nav || !menuIcon) return;
-
-    icon.classList.toggle("change");
     nav.classList.toggle("open");
+    icon.classList.toggle("change");
 }
 
 // Close menu when clicking a link

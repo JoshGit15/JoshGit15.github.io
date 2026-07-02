@@ -33,6 +33,23 @@ body.dark-mode {
    HEADER
 ========================= */
 
+.desktop-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.desktop-nav a:hover {
+    color: #4facfe;
+}
+
 #navigationBar {
     display: flex;
     justify-content: space-between;
@@ -42,34 +59,23 @@ body.dark-mode {
     position: sticky;
     top: 0;
 
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-
     z-index: 1000;
 }
 
-body.dark-mode #navigationBar {
-    background: rgba(15, 15, 15, 0.8);
+.menu-icon {
+    display: none;
+    cursor: pointer;
 }
 
-#rightNavigation {
-    display:flex;
-    justify-content: right;
-    align-items: center;
-    gap: 10px;
-}
+@media (max-width: 768px) {
 
-.header1 a {
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-decoration: none;
+    .desktop-nav {
+        display: none;
+    }
 
-    color: #111;
-    transition: all 0.3s ease;
-}
-
-body.dark-mode .header1 a {
-    color: #fff;
+    .menu-icon {
+        display: block;
+    }
 }
 
 /* =========================

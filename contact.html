@@ -22,13 +22,34 @@
 <header id="navigationBar">
 
     <h1 class="header1">
-        <a href="index.html">Joshua Halpin CV</a>
+        <a href="index.html">Joshua Halpin</a>
     </h1>
 
-    <div class="menu-icon" onclick="toggleMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav">
+        <a href="index.html#summary">Summary</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#achievements">Achievements</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="rightNavigation">
+
+        <!-- MOBILE HAMBURGER -->
+        <div class="menu-icon" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- THEME TOGGLE -->
+        <button id="toggleButton" type="button">
+            <span class="btn-text">Light Mode</span>
+            <span class="btn-icon">☀️</span>
+        </button>
+
     </div>
 
 </header>
@@ -150,25 +171,38 @@ if (nav && menuIcon) {
 
 // ================= Theme Toggle =================
 
-const themeBtn = document.getElementById("themeBtn");
+const themeBtn = document.getElementById("toggleButton");
 
-// apply saved theme on load
+// ALWAYS apply saved theme (even if button missing)
 const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
-    if (themeBtn) themeBtn.textContent = "Light Mode";
-} else {
-    if (themeBtn) themeBtn.textContent = "Dark Mode";
 }
 
+// only attach button behavior if it exists
 if (themeBtn) {
+    const text = themeBtn.querySelector(".btn-text");
+    const icon = themeBtn.querySelector(".btn-icon");
+
+    const updateUI = () => {
+        const isDark = document.body.classList.contains("dark-mode");
+
+        if (text) text.textContent = isDark ? "Dark Mode" : "Light Mode";
+        if (icon) icon.textContent = isDark ? "🌙" : "☀️";
+    };
+
+    updateUI();
+
     themeBtn.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle("dark-mode");
 
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark-mode") ? "dark" : "light"
+        );
 
-        themeBtn.textContent = isDark ? "Light Mode" : "Dark Mode";
+        updateUI();
     });
 }
 
@@ -200,6 +234,9 @@ fetch(url)
             "⚠️ Weather failed to load";
         console.error(error);
     });
+
+     src="script.js"
+
 </script>
 
 </body>
