@@ -8,7 +8,7 @@
 
     <title>Joshua Halpin | CV</title>
 
-    <link rel="icon" type="image/x-icon" href="/Favicon.png">
+    <link rel="icon" href="/Favicon.png">
     <link rel="stylesheet" href="styles.css">
 
     <!-- Fonts -->
@@ -26,7 +26,7 @@
 <header id="navigationBar">
 
     <h1 class="header1">
-        <a href="index.html">Joshua Halpin CV</a>
+        <a href="index.html">Joshua Halpin</a>
     </h1>
 
     <div id = "rightNavigation">
@@ -130,8 +130,8 @@
 
         <div class="skill-category">
             <h3>Web Development</h3>
-            <p>HTML5 (Basic)</p>
-            <p>JavaScript (Basic)</p>
+            <p>HTML5 (fundamental)</p>
+            <p>JavaScript (fundamental)</p>
         </div>
 
         <div class="skill-category">
@@ -167,7 +167,7 @@
         <div class="portfolio-item" onclick="openModal(this)">
             <img src="Isometric Bedroom.png"
                  data-title="Isometric Bedroom"
-                 data-desc="A study in lighting, composition, and interior modelling using Blender.">
+                 data-desc="A detailed isometric interior scene created in Blender, focusing on composition, lighting balance, and spatial design. The project demonstrates understanding of camera framing, material variation, and scene layout to create a visually coherent environment.">
 
             <div class="portfolio-text">
                 <h3>Isometric Bedroom</h3>
@@ -178,7 +178,7 @@
         <div class="portfolio-item" onclick="openModal(this)">
             <img src="Can.png"
                  data-title="Coca-Cola Can"
-                 data-desc="Hard-surface modelling and realistic material rendering practice.">
+                 data-desc="A hard-surface modelling study focused on achieving realistic proportions, surface detail, and material accuracy. Emphasis was placed on clean topology, reflective shader setup, and lighting to replicate a commercially lit product render.">
 
             <div class="portfolio-text">
                 <h3>Can Model</h3>
@@ -189,7 +189,7 @@
         <div class="portfolio-item" onclick="openModal(this)">
             <img src="Stylized Temple.png"
                  data-title="Stylized Temple"
-                 data-desc="Environment design focusing on stylised architecture and lighting.">
+                 data-desc="A stylized architectural environment exploring shape language, lighting, and atmosphere. The project highlights environment design fundamentals, including silhouette clarity, material stylisation, and mood-driven lighting composition.">
 
             <div class="portfolio-text">
                 <h3>Stylized Temple</h3>
@@ -200,7 +200,7 @@
         <div class="portfolio-item" onclick="openModal(this)">
             <img src="Chair.png"
                  data-title="Hard Surface Chair"
-                 data-desc="Focused on precision modelling, edge control, and clean topology workflows.">
+                 data-desc="A precision-focused hard-surface modelling exercise demonstrating clean geometry, edge control, and accurate form development. The model was created with attention to real-world structure and rendering consistency.">
 
             <div class="portfolio-text">
                 <h3>Hard Surface Chair</h3>
@@ -208,6 +208,19 @@
             </div>
         </div>
 
+    <div class="portfolio-item"
+        onclick="openModal(this)"
+        data-title="AirPods Product Render"
+        data-desc="A product-focused 3D animation exploring lighting, material realism, and smooth looping motion presentation.">
+
+        <video muted playsinline loop>
+            <source src="Airpods.webm" type="video/webm">
+        </video>
+
+        <div class="portfolio-text">
+            <h3>AirPods</h3>
+            <p>Product • Lighting • Animation</p>
+        </div>
     </div>
 
 </section>
@@ -283,16 +296,12 @@
 </footer>
 
 <!-- ================= MODAL ================= -->
-<div id="imageModal" class="modal">
-
-    <span class="close" onclick="closeModal()">&times;</span>
+<div id="imageModal" class="modal" onclick="closeModal()">
 
     <div class="modal-content">
 
-        <div class="modal-left">
-            <img id="modalImage">
-        </div>
-
+        <img id="modalImage" style="display:none;">
+        <video id="modalVideo" controls autoplay loop style="display:none;"></video>
         <div class="modal-right">
             <h2 id="modalTitle"></h2>
             <p id="modalDesc"></p>
@@ -304,7 +313,7 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-    /* =====================================================
+/* =====================================================
    ELEMENTS
 ===================================================== */
 
@@ -312,9 +321,12 @@ const nav = document.getElementById("myNav");
 const menuIcon = document.querySelector(".menu-icon");
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
+const modalVideo = document.getElementById("modalVideo");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
-
+const topBtn = document.getElementById("myBtn");
+const scrollBar = document.getElementById("scrollBar");
+let themeBtn = document.getElementById("toggleButton");
 
 /* =====================================================
    HAMBURGER MENU
@@ -356,7 +368,6 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-
 /* =====================================================
    BACK TO TOP
 ===================================================== */
@@ -368,25 +379,19 @@ function topFunction() {
     });
 }
 
-const topBtn = document.getElementById("myBtn");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-        topBtn.classList.add("show");
-    } else {
-        topBtn.classList.remove("show");
-    }
-
-});
-
+if (topBtn) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            topBtn.classList.add("show");
+        } else {
+            topBtn.classList.remove("show");
+        }
+    });
+}
 
 /* =====================================================
    THEME TOGGLE
 ===================================================== */
-
-let theme = localStorage.getItem("theme");
-let themeBtn = document.getElementById("toggleButton");
 
 if (themeBtn) {
 
@@ -420,9 +425,8 @@ if (themeBtn) {
     });
 }
 
-
 /* =====================================================
-   DROPDOWNS
+   ACHIEVEMENT DROPDOWNS
 ===================================================== */
 
 document.querySelectorAll(".achievement-card").forEach(card => {
@@ -435,45 +439,94 @@ document.querySelectorAll(".achievement-card").forEach(card => {
 
 });
 
-
 /* =====================================================
    MODAL (IMAGE ZOOM)
 ===================================================== */
 
-function openModal(el) {
-    if (!modal || !modalImg) return;
-
-    const img = el.querySelector("img");
-
-    modalImg.src = img.src;
-
-    if (modalTitle) modalTitle.textContent = img.dataset.title || "";
-    if (modalDesc) modalDesc.textContent = img.dataset.desc || "";
-
-    modal.style.display = "block";
-}
-
 function closeModal() {
     if (!modal) return;
-    modal.style.display = "none";
+
+    modal.classList.remove("open");
+
+    if (modalImg) {
+        modalImg.src = "";
+        modalImg.style.display = "none";
+    }
+
+    if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        modalVideo.src = "";
+        modalVideo.style.display = "none";
+    }
 }
 
-// Click outside modal closes it
-if (modal) {
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
+function openModal(el) {
+    if (!modal) return;
+
+    const img = el.querySelector("img");
+    const video = el.querySelector("video");
+
+    // reset modal
+    if (modalImg) {
+        modalImg.src = "";
+        modalImg.style.display = "none";
+    }
+
+    if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.currentTime = 0;
+        modalVideo.src = "";
+        modalVideo.style.display = "none";
+    }
+
+    // =====================
+    // IMAGE
+    // =====================
+    if (img) {
+        modalImg.src = img.src;
+        modalImg.style.display = "block";
+
+        modalTitle.textContent = img.dataset.title || "";
+        modalDesc.textContent = img.dataset.desc || "";
+
+        modal.classList.add("open");
+        return;
+    }
+
+    // =====================
+    // VIDEO
+    // =====================
+    if (video) {
+        const source = video.querySelector("source");
+
+        modalVideo.src = source ? source.src : video.src;
+        modalVideo.style.display = "block";
+
+        modalVideo.loop = true;
+        modalVideo.currentTime = 0;
+        modalVideo.load();
+
+        modalVideo.play().catch(() => {});
+
+        modalTitle.textContent = el.dataset.title || "";
+        modalDesc.textContent = el.dataset.desc || "";
+
+        modal.classList.add("open");
+        return;
+    }
+
+    console.log("No media found in item:", el);
 }
 
 /* =====================================================
    SCROLL PROGRESS BAR
 ===================================================== */
 
-const scrollBar = document.getElementById("scrollBar");
-
 function updateScrollProgress() {
+
+    if (!scrollBar) return;
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     const scrollHeight =
@@ -489,6 +542,12 @@ function updateScrollProgress() {
 window.addEventListener("scroll", updateScrollProgress);
 window.addEventListener("resize", updateScrollProgress);
 window.addEventListener("load", updateScrollProgress);
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeModal();
+    }
+});
 
 
 </script>
