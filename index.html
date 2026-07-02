@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +41,11 @@
         <span class="btn-text">Light Mode</span>
         <span class="btn-icon">☀️</span>
     </button>
+
+    </div>
+
+    <div id="scrollProgress">
+    <div id="scrollBar"></div>
 
     </div>
 
@@ -460,6 +466,31 @@ if (modal) {
         }
     });
 }
+
+/* =====================================================
+   SCROLL PROGRESS BAR
+===================================================== */
+
+const scrollBar = document.getElementById("scrollBar");
+
+function updateScrollProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+    scrollBar.style.width = `${progress}%`;
+}
+
+window.addEventListener("scroll", updateScrollProgress);
+window.addEventListener("resize", updateScrollProgress);
+window.addEventListener("load", updateScrollProgress);
+
+
 </script>
 
 
